@@ -52,6 +52,7 @@ int main(int argc, const char **argv)
             osm_data = std::move(*data);
     }
     
+    //Taking input from user
     float start_x;
     float start_y;
     float end_x;
@@ -61,7 +62,7 @@ int main(int argc, const char **argv)
     RouteModel model{osm_data};
 
     // Create RoutePlanner object and perform A* search.
-    RoutePlanner route_planner{model, start_x, start_y, end_x, end_y};
+    RoutePlanner route_planner{model, start_x,start_y,end_x,end_y};
     route_planner.AStarSearch();
 
     std::cout << "Distance: " << route_planner.GetDistance() << " meters. \n";
